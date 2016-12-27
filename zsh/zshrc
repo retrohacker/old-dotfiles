@@ -82,16 +82,6 @@ function gpull () {
   git pull $1 $2
 }
 
-# ssh for an ns-ops server
-function nssh () {
-  ssh -i ~/Downloads/ns-ops-us-west-2.pem ubuntu@"${1}"
-}
-
-# SCP for a ns-ops server
-function nscp () {
-  scp -i ~/Downloads/ns-ops-us-west-2.pem $@
-}
-
 # Docker clean
 function dc () {
   docker ps -q | xargs docker kill
