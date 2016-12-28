@@ -18,10 +18,10 @@ theme.fg_minimize   = "#000000"
 
 theme.tasklist_bg_focus = "#ccc3c3"
 
-theme.border_width  = "0"
-theme.border_normal = "#fff3c3"
+theme.border_width  = "2"
+theme.border_normal = "#282828"
 theme.border_focus  = "#d81921"
-theme.border_marked = "#fff3c3"
+theme.border_marked = "#282828"
 
 -- There are other variable sets
 -- overriding the default one when
