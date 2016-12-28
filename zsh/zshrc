@@ -15,6 +15,9 @@ plugins=(dirhistory zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+# Fix colors for gruvbox
+source $HOME/dotfiles/vim/bundle/gruvbox/gruvbox_256palette.sh
+
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export EDITOR='vim'
