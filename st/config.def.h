@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char font[] = "Fantasque Sans Mono:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -82,8 +82,6 @@ static char termname[] = "st-256color";
  */
 static unsigned int tabspaces = 8;
 
-/* gruvbox-dark colorscheme */
-
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
@@ -103,6 +101,7 @@ static const char *colorname[] = {
 	"#8ec07c",
 	"#ebdbb2",
 };
+
 
 /*
  * Default colors (colorname index)
