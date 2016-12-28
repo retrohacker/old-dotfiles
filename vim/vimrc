@@ -44,12 +44,13 @@ autocmd vimEnter * Minimap          " Show minimap on startup
 " Color Scheme
 " ============
 
+set termguicolors
+syntax enable
 set t_Co=256                        " 256 bit color
 set background=dark                 " dark backrgound
 let g:gruvbox_contrast_dark='hard'  " Extra bold colors
 let g:gruvbox_italic=1              " Ensure gruvbox uses italics
 colorscheme gruvbox
-syntax enable
 set list                            " Highlight unwanted chars
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set colorcolumn=80                  " Draw line at this character limit
