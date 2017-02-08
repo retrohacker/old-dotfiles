@@ -12,41 +12,22 @@ PACKAGES=(
     awesome
     awesome-extra
     build-essential
-    bumblebee-nvidia
     digikam
     firmware-iwlwifi
     fonts-powerline
-    freecad
-    gdebi
     gedit
     gimp
     gimp-plugin-registry
     gnupg
-    gtk-recordmydesktop
     htop
     inkscape
     ksnapshot
     libasound2
     libasound2-doc
     linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,')
-    lxrandr
-    nvidia-driver
-    nvidia-xconfig
-    postgresql-client
-    primus
-    primus-libs:i386
-    python-crypto
-    python-gpgme
-    python-jinja2
-    python-paramiko
-    python-setuptools
-    python-yaml
-    transmission-gtk
     tree
     vim
-    virtualbox
     vlc
-    wicd
     xbacklight
     xorg
     zsh
@@ -98,22 +79,6 @@ runner() {
 # Run Setup
 
 heading='true' Log 'Updating System'
-Log 'Including non-free packages'
-# Don't error when sources.list.d is empty
-shopt -s nullglob
-NONFREE=$(cat /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -v '^#' | grep 'deb.*main.*contrib.*non-free')
-shopt -u nullglob
-if [ -z "$NONFREE" ]; then
-  # quoted to ensure >> gets run inside of runner
-  runner \
-    "echo 'deb http://httpredir.debian.org/debian/ jessie main contrib non-free' >> /etc/apt/sources.list"
-else
-  runner \
-  echo "non-free repo installed, skipping step"
-fi
-Log 'Include i386'
-runner \
-  dpkg --add-architecture i386
 Log 'Updating apt-get'
 runner \
   apt-get update

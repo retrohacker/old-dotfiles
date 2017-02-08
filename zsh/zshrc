@@ -11,7 +11,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(dirhistory zsh-syntax-highlighting)
+plugins=(dirhistory zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,3 +87,9 @@ function fuck () {
 ####################
 
 PATH="$PATH:/home/retrohacker/Development/docker/.bin"
+
+#####################
+# Userland Software #
+#####################
+
+PATH="$PATH:/home/retrohacker/software/.bin"
