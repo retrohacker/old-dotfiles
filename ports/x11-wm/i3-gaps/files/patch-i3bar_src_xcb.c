@@ -1,5 +1,4 @@
 --- i3bar/src/xcb.c	2021-02-01 01:54:35.000000000 -0700
-+++ xcb.c	2021-05-09 09:37:52.651933000 -0700
 @@ -106,14 +106,17 @@
  };
  struct xcb_colors_t colors;
@@ -67,7 +66,19 @@
                         x + render->x_offset + has_border * logical_px(block->border_left),
                         bar_height / 2 - font.height / 2,
                         render->width - has_border * logical_px(block->border_left + block->border_right));
-@@ -527,7 +538,7 @@
+@@ -312,8 +323,9 @@
+ 
+         /* If this is not the last block, draw a separator. */
+         if (TAILQ_NEXT(block, blocks) != NULL) {
+-            x += block->sep_block_width;
+-            draw_separator(output, x, block, use_focus_colors);
++            x += margin;
++            //x += block->sep_block_width;
++            //draw_separator(output, x, block, use_focus_colors);
+         }
+     }
+ }
+@@ -527,7 +539,7 @@
      const bool event_is_release = (event->response_type & ~0x80) == XCB_BUTTON_RELEASE;
  
      int32_t x = event->event_x >= 0 ? event->event_x : 0;
