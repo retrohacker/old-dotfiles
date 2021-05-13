@@ -177,6 +177,17 @@ mode "resize" {
 
 bindsym Mod4+r mode "resize"
 
+# Launch programs
+mode "launch" {
+	bindsym f exec firefox; mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym Mod4+comma mode "default"
+}
+
+bindsym Mod4+comma mode "launch"
+
+
 # Set theme colors
 
 set $base00      #272822

@@ -3,4 +3,4 @@ MARKER=.install
 
 .PHONY: install
 install:
-	stow -v --dotfiles -t "${HOME}/.config" dot-config
+	stow -v --dotfiles -t "${HOME}" home

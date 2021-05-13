@@ -1,0 +1,1 @@
+alias fzf="fzf --preview 'highlight --force --out-format=xterm256 {}'"
