@@ -6,4 +6,9 @@ do
 	source "$ALIAS"
 done
 
+if [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]]
+then
+	source /usr/local/share/bash-completion/bash_completion.sh
+fi
+
 PROMPT_COMMAND="source ~/.bashprompt"
