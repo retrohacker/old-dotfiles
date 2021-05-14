@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+PS1="┌ \e[35m$(pwd)"
+
+if git status 2>/dev/null 1>/dev/null
+then
+	STATUS="$(git status --porcelain)"
+	PS1+=" \e[32m[$(git branch --show-current)"
+	if [ -n "$STATUS" ]
+	then
+		PS1+=" \e[33mdirty"
+	fi
+	PS1+="\e[32m]"
+fi
+
+PS1+="\e[0m\n└ "

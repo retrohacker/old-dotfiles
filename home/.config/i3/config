@@ -180,6 +180,7 @@ bindsym Mod4+r mode "resize"
 # Launch programs
 mode "launch" {
 	bindsym f exec firefox; mode "default"
+	bindsym a exec anki; mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym Mod4+comma mode "default"

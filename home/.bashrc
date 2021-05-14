@@ -5,3 +5,5 @@ for ALIAS in ~/.alias/*
 do
 	source "$ALIAS"
 done
+
+PROMPT_COMMAND="source ~/.bashprompt"
