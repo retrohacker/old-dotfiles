@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ -f "$1" ]
+then
+	highlight --force --out-format=xterm256 "$1"
+else
+	cd "$1"
+	ls -AF --color=always
+fi
