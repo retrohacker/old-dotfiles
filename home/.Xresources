@@ -72,7 +72,7 @@
 
 ! Transparent
 *inheritPixmap: true
-*shading: 40
+*shading: 20
 
 ! Hide scrollbar
 *scrollBar: false
