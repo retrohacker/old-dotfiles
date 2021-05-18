@@ -1,1 +1,1 @@
-alias ls="ls --color=always"
+alias ls="ls -GF"
