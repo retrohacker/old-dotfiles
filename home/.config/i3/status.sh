@@ -30,6 +30,10 @@ do
     then
         COLOR="$COLOR_BAD"
     fi
+    if (( PERCENT < 10 ))
+    then
+        PERCENT="0$PERCENT" # Fixed width
+    fi
     if (( CHARGING == 3 ))
     then
         COLOR="$COLOR_CHARGING"
