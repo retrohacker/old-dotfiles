@@ -1,4 +1,4 @@
-PATH="$PATH:~/.bin"
+PATH="$PATH:~/.bin:~/go/bin"
 for SOURCE in ~/.source/*
 do
 	source "$SOURCE"
