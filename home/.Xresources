@@ -77,3 +77,6 @@
 ! Hide scrollbar
 *scrollBar: false
 *internalBorder: 10
+
+! Avoid overlapping w/ kak's <a-s>
+URxvt.perl-ext-common: "default, -searchable-scrollback"
