@@ -1,0 +1,3 @@
+[submodule "home/.config/kak/plugins/kakboard"]
+	path = home/.config/kak/plugins/kakboard
+	url = git@github.com:lePerdu/kakboard
