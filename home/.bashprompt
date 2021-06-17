@@ -11,7 +11,7 @@ function genPS1() {
 		local STATUS="$(git status --porcelain)"
 
 		PS1+="$GIT_PATH_BEFORE\e[32m$GIT_PATH\n\e[0m│"
-		PS1+=" \e[34m$(git remote get-url origin)"
+		PS1+=" \e[34m$(git remote get-url origin 2>/dev/null || echo 'originless')"
 		PS1+=" \e[32m[$(git branch --show-current)"
 
 		if [ -n "$STATUS" ]
