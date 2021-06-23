@@ -4,7 +4,8 @@ PS1=""
 function genPS1() {
 	local DIR="$(pwd)"
 	local ME="$(whoami)"
-	PS1="\e[0m┌ \e[33m[${ME}] \e[35m"
+	local HOST="$(hostname)"
+	PS1="\e[0m┌ \e[33m[${ME}@${HOST}] \e[35m"
 	if git status 2>/dev/null 1>/dev/null
 	then
 		local GIT_PATH_BEFORE="$(cd "$(git rev-parse --show-cdup)" && dirname "$(pwd)")"
