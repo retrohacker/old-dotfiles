@@ -12,4 +12,5 @@ then
 	source /usr/local/share/bash-completion/bash_completion.sh
 fi
 
+alias ls="ls --color"
 PROMPT_COMMAND="source ~/.bashprompt"
