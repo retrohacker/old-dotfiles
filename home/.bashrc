@@ -5,7 +5,7 @@ do
 done
 
 source ~/.config/fzf/key-bindings.bash
-source /usr/local/share/examples/fzf/shell/completion.bash
+source ~/.config/fzf/completion.bash
 
 if [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]]
 then
