@@ -211,8 +211,8 @@ client.background	$base00
 title_align center
 default_border none
 
-gaps outer 10 
-gaps inner 15
+gaps outer 40 
+gaps inner 35
 gaps bottom 0
 
 bar {
