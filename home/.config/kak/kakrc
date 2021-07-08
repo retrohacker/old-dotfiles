@@ -3,9 +3,6 @@ add-highlighter global/ number-lines -relative -hlcursor
 add-highlighter global/ number-lines -hlcursor
 add-highlighter global/ wrap -word -indent
 
-#source "%val{config}/plugins/kakboard/kakboard.kak"
-#hook global WinCreate .* %{ kakboard-enable }
-
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(go) %{
     lsp-enable-window
