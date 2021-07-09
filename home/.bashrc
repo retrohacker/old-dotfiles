@@ -13,4 +13,15 @@ then
 fi
 
 alias ls="ls --color"
+
+function git() {
+    if [[ "$1" == "diff" ]]
+    then
+        shift
+        git difftool --extcmd='icdiff -N' -y "$@"
+    else
+        command git "$@"
+    fi
+}
+
 PROMPT_COMMAND="source ~/.bashprompt"
