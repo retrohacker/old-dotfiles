@@ -18,7 +18,7 @@ function git() {
     if [[ "$1" == "diff" ]]
     then
         shift
-        git difftool --extcmd='icdiff -N' -y "$@"
+        git difftool --extcmd='icdiff -N' -y "$@" | most
     else
         command git "$@"
     fi
