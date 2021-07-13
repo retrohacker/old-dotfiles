@@ -24,4 +24,6 @@ function git() {
     fi
 }
 
+export EDITOR="kak"
+
 PROMPT_COMMAND="source ~/.bashprompt"
