@@ -1,6 +1,6 @@
 add-highlighter global/ show-whitespaces
 add-highlighter global/ number-lines -relative -hlcursor
-add-highlighter global/ number-lines -hlcursor
+add-highlighter global/ number-lines -hlcursor -separator 'G or '
 add-highlighter global/ wrap -word -indent
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
