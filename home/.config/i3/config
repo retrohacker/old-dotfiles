@@ -201,7 +201,7 @@ set $base04      #7e40a5
 exec --no-startup-id ./.fehbg
 
 # <colorclass> <border> <background> <text> <indicator> <child_border>
-client.focused          $base00 $base00 $base02 $base00 $base00
+client.focused          $base00 $base00 $base02 $base00 $base04
 client.focused_inactive $base00 $base00 $base04 $base00 $base00
 client.unfocused        $base00 $base00 $base01 $base00 $base00
 client.urgent           $base00 $base00 $base03 $base00 $base00
@@ -209,7 +209,7 @@ client.placeholder      $base00 $base00 $base01 $base00 $base00
 client.background	$base00
 
 title_align center
-default_border none
+default_border pixel 3
 
 gaps outer 40 
 gaps inner 35
