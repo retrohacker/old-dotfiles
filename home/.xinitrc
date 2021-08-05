@@ -24,4 +24,4 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # start some nice programs
-exec i3
+exec ssh-agent i3
