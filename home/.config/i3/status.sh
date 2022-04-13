@@ -38,7 +38,8 @@ do
     then
         COLOR="$COLOR_CHARGING"
     fi
-    WIFI_COLOR="$COLOR_UNKNOWN"
+    WIFI="睊"
+    WIFI_COLOR="$COLOR_BAD"
 
     # Now do all of the stuff that is async _only_ if this isn't the first invocation of the loop
     # This keeps the bar from hanging on first load.
@@ -48,13 +49,15 @@ do
     then
         if nc -w 1 -z 1.1.1.1 80
         then
+            WIFI="直"
             WIFI_COLOR="$COLOR_GOOD"
         else
+            WIFI="睊"
             WIFI_COLOR="$COLOR_BAD"
         fi
     fi
     echo -n ','
-    jq -cMn --arg percent " $PERCENT " --arg color "$COLOR" --arg wifi "$WIFI_COLOR" '[{"full_text":$percent,"background":$color},{"full_text": " \\/ ","background":$wifi}]'
+    jq -cMn --arg percent " $PERCENT " --arg color "$COLOR" --arg wifi "$WIFI" --arg wificolor "$WIFI_COLOR" '[{"full_text":$percent,"background":$color},{"full_text": $wifi, color: $wificolor}]'
     if (( i > 1 ))
     then
         sleep 5

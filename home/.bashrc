@@ -1,3 +1,9 @@
+shopt -s histappend
+shopt -s cmdhist
+HISTFILESIZE=10000000
+HISTSIZE=10000000
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:cat:cd'
 PATH="$PATH:~/.bin:~/go/bin"
 for SOURCE in ~/.source/*
 do
@@ -18,7 +24,7 @@ function git() {
     if [[ "$1" == "diff" ]]
     then
         shift
-        git difftool --extcmd='icdiff -N -L "$REMOTE" -L ""' -y "$@" | less -R
+        git difftool --extcmd='icdiff -N -L "$REMOTE" -L ""' -y "$@"
     else
         command git "$@"
     fi

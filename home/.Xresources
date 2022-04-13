@@ -1,78 +1,79 @@
-! Colours are in groups as the second one should be a brighter version.
-
-! Background: black, dark grey
-#define _background #272822
-#define _color8 #303030
-
-! Color1/foreground: light grey: standard files, cursor
-! Color9: bright pink: soft link e.g. ln -s test1 imaginarytest
-#define _foreground #d0d0d0
-#define _color9 #ff0090
-
-! Color2: dark green: world read/write dir e.g. /tmp
-! Color10: bright green: binaries user can execute /bin
-#define _color2 #66AA11
-#define _color10 #80FF00
-
-! Color3: medium brown: fifo e.g mkfifo fifotest
-! Color11: light brown/sand: block special files e.g ls -l /dev/loop0
-#define _color3 #c47f2c
-#define _color11 #ffba68
-
-! Color4: medium blue: unused
-! Color12: light blue: directory
-#define _color4 #30309b
-#define _color12 #5f5fee
-
-! Color5: dark purple
-! Color13: light purple: socket file /var/run/dbus_system_bus_socket
-#define _color5 #7e40a5
-#define _color13 #bb88dd
-
-! Color6: medium magenta: unused
-! Color14: light magenta: symbolic links e.g. ~/Examples /bin/lsmod
-#define _color6 #3579A8
-#define _color14 #4eb4fa
-
-! Color7: medium grey: setuid file e.g. /usr/bin/sudo
-! Color15: light grey: background color for setuid files e.g /usr/bin/sudo
-#define _color7 #9999AA
-! Trying white in case it helps
-#define _color15 #ffffff
-!#define _color15 #d0d0d0
-
-! XTerm specific
-*background: _background
-*foreground: _foreground
-
-! Not really required - XTerm defaults to using the foreground colour
-*cursorColor: _foreground
-
-*color0: _background
-*color1: _foreground
-*color2: _color2
-*color3: _color3
-*color4: _color4
-*color5: _color5
-*color6: _color6
-*color7: _color7
-! 8-15 are considered brighter colours of 1-7
-*color8: _color8
-*color9: _color9
-*color10: _color10
-*color11: _color11
-*color12: _color12
-*color13: _color13
-*color14: _color14
-*color15: _color15
-*termName: xterm-256color
-
-
-! Begin urxvt configuration
-
-! Transparent
-*inheritPixmap: true
-*shading: 20
+!! Colours are in groups as the second one should be a brighter version.
+!
+!! Background: black, dark grey
+!#define _background #272822
+!#define _color8 #303030
+!
+!! Color1/foreground: light grey: standard files, cursor
+!! Color9: bright pink: soft link e.g. ln -s test1 imaginarytest
+!#define _foreground #d0d0d0
+!#define _color9 #ff0090
+!
+!! Color2: dark green: world read/write dir e.g. /tmp
+!! Color10: bright green: binaries user can execute /bin
+!#define _color2 #66AA11
+!#define _color10 #80FF00
+!
+!! Color3: medium brown: fifo e.g mkfifo fifotest
+!! Color11: light brown/sand: block special files e.g ls -l /dev/loop0
+!#define _color3 #c47f2c
+!#define _color11 #ffba68
+!
+!! Color4: medium blue: unused
+!! Color12: light blue: directory
+!#define _color4 #30309b
+!#define _color12 #5f5fee
+!
+!! Color5: dark purple
+!! Color13: light purple: socket file /var/run/dbus_system_bus_socket
+!#define _color5 #7e40a5
+!#define _color13 #bb88dd
+!
+!! Color6: medium magenta: unused
+!! Color14: light magenta: symbolic links e.g. ~/Examples /bin/lsmod
+!#define _color6 #3579A8
+!#define _color14 #4eb4fa
+!
+!! Color7: medium grey: setuid file e.g. /usr/bin/sudo
+!! Color15: light grey: background color for setuid files e.g /usr/bin/sudo
+!#define _color7 #9999AA
+!! Trying white in case it helps
+!#define _color15 #ffffff
+!!#define _color15 #d0d0d0
+!
+!! XTerm specific
+!*background: _background
+!*foreground: _foreground
+!
+!! Not really required - XTerm defaults to using the foreground colour
+!*cursorColor: _foreground
+!
+!*color0: _background
+!*color1: _foreground
+!*color2: _color2
+!*color3: _color3
+!*color4: _color4
+!*color5: _color5
+!*color6: _color6
+!*color7: _color7
+!! 8-15 are considered brighter colours of 1-7
+!*color8: _color8
+!*color9: _color9
+!*color10: _color10
+!*color11: _color11
+!*color12: _color12
+!*color13: _color13
+!*color14: _color14
+!*color15: _color15
+!*termName: xterm-256color
+!
+!
+!! Begin urxvt configuration
+!
+!! Transparent
+!!*inheritPixmap: true
+!!*shading: 20
+!
 
 ! Hide scrollbar
 *scrollBar: false
@@ -80,3 +81,23 @@
 
 ! Avoid overlapping w/ kaks <a-s>
 URxvt.perl-ext-common: "default, -searchable-scrollback"
+
+! Dracula Xresources palette
+*.foreground: #F8F8F2
+*.background: #282A36
+*.color0:     #000000
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6

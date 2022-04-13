@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+history -a
 PS1=""
 function genPS1() {
 	local DIR="$(pwd)"
