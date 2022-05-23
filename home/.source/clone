@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+function clone_usage() {
+  echo "Usage: clone [git url]" >&2
+  echo "  Clones a git repository into ~/Development/[platform]/[PATH/...] and adds it to zoxide" >&2
+}
+
+function clone() {
+  DEV_DIR="$HOME/Development"
+  REPO="$1"
+
+  PROTOCOL=""
+  STR_STATE="$1"
+  SEPERATOR=""
+
+  # Detect the protocol, strip the protocol from the input string
+  # and set the character that acts as the domain seperator
+  case "$STR_STATE" in
+    git@*)
+      PROTOCOL="SSH"
+      SEPERATOR=":"
+      STR_STATE="${STR_STATE#git@}"
+      ;;
+    https://*)
+      PROTOCOL="HTTPS"
+      SEPERATOR="/"
+      STR_STATE="${STR_STATE#https://}"
+      ;;
+    *)
+      echo "Error: Unknown protocol for '$1'" >&2
+      clone_usage
+      exit 1
+      ;;
+  esac
+
+  # Parse the path by stripping the domain from the string
+  DIR="${STR_STATE#*${SEPERATOR}}"
+  # Parse the domain by stripping the path from the string
+  DOMAIN="${STR_STATE%${DIR}*}"
+  # Remove the .git extension from the path
+  DIR="${DIR%.git}"
+  # Remove the seperator from the domain
+  DOMAIN="${DOMAIN%${SEPERATOR}}"
+
+  # Confirm the action with the user
+  REPO_PATH="$DEV_DIR/${DOMAIN}/${DIR}"
+  echo "Cloning $REPO into $REPO_PATH"
+  read -r -p "Continue? [Y/n]" input
+  case "$input" in
+    [yY])
+      echo "Making it so..."
+      ;;
+    *)
+      echo "Aborting"
+      exit 1
+      ;;
+  esac
+
+  # Create the directory
+  mkdir -p "$REPO_PATH"
+
+  # Add it to git
+  git clone "$REPO" "$REPO_PATH"
+
+  # Add it to zoxide
+  zoxide add "$REPO_PATH"
+
+  # Leave the user in the new directory
+  cd "$REPO_PATH"
+}
