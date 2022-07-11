@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+function k() {
+  SESSION="$(kak -l | head -n 1)"
+  ARGS=()
+  if [ -n "$SESSION" ]
+  then
+    ARGS+=("-c")
+    ARGS+=("$SESSION")
+  fi
+  kak "${ARGS[@]}" "$@"
+}
