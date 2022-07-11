@@ -3,29 +3,35 @@
 history -a
 PS1=""
 function genPS1() {
-	local DIR="$(pwd)"
-	local ME="$(whoami)"
-	local HOST="$(hostname)"
-	PS1="\e[0m┌ \e[33m[${ME}@${HOST}] \e[35m"
-	if git status 2>/dev/null 1>/dev/null
-	then
-		local GIT_PATH_BEFORE="$(cd "$(git rev-parse --show-cdup)" && dirname "$(pwd)")"
-		local GIT_PATH="${DIR#$GIT_PATH_BEFORE}"
-		local STATUS="$(git status --porcelain)"
+  local DIR="$(pwd)"
+  local ME="$(whoami)"
+  local HOST="$(hostname)"
+  if [ "${ME}" == "root" ]
+  then
+    local NAME_COLOR="\e[31;1;5m"
+  else
+    local NAME_COLOR="\e[33m"
+  fi
+  PS1="\e[0m┌ ${NAME_COLOR}[${ME}@${HOST}]\e[0m \e[35m"
+  if git status 2>/dev/null 1>/dev/null
+  then
+    local GIT_PATH_BEFORE="$(cd "$(git rev-parse --show-cdup)" && dirname "$(pwd)")"
+    local GIT_PATH="${DIR#$GIT_PATH_BEFORE}"
+    local STATUS="$(git status --porcelain)"
 
-		PS1+="$GIT_PATH_BEFORE\e[32m$GIT_PATH\n\e[0m│"
-		PS1+=" \e[34m$(git remote get-url origin 2>/dev/null || echo 'originless')"
-		PS1+=" \e[32m[$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+    PS1+="$GIT_PATH_BEFORE\e[32m$GIT_PATH\n\e[0m│"
+    PS1+=" \e[34m$(git remote get-url origin 2>/dev/null || echo 'originless')"
+    PS1+=" \e[32m[$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
 
-		if [ -n "$STATUS" ]
-		then
-			PS1+=" \e[33mdirty"
-		fi
-		PS1+="\e[32m]"
-	else
-		PS1+="$DIR"
-	fi
-	PS1+="\e[0m\n└ "
+    if [ -n "$STATUS" ]
+    then
+      PS1+=" \e[33mdirty"
+    fi
+    PS1+="\e[32m]"
+  else
+    PS1+="$DIR"
+  fi
+  PS1+="\e[0m\n└ "
 }
 
 genPS1
