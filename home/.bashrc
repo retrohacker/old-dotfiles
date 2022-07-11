@@ -33,3 +33,4 @@ function git() {
 export EDITOR="kak"
 
 PROMPT_COMMAND="source ~/.bashprompt"
+eval "$(direnv hook bash)"
